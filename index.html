@@ -1,104 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Flower Garden - Support</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #39FF14;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      color: #39FF14;
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    p {
-      max-width: 600px;
-      text-align: center;
-      line-height: 1.5em;
-      margin-bottom: 30px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      max-width: 400px;
-    }
-
-    input, textarea {
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-    }
-
-    input[type="submit"] {
-      background-color: #39FF14;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #00cc66;
-    }
-
-    footer {
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #888;
-      text-align: center;
-    }
-
-    .info-box {
-      background-color: #111;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 30px;
-      max-width: 600px;
-      font-size: 0.95em;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #39FF14;
-      text-decoration: underline;
-    }
-  </style>
+  <title>Our Flower Garden – Ana Sayfa & Market</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <meta name="description" content="Arkadaşınla rolleri bölüş, çiçek yetiştir, hasat et, siparişleri tamamla ve yeni çiçeklerin kilidini aç. Our Flower Garden dünyasına katıl!">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html">
+        <img class="brand-logo" src="https://images.unsplash.com/photo-1520975867597-0f146f3e25a6?q=80&w=200&auto=format&fit=crop" alt="Our Flower Garden Logo"/>
+        <span>Our Flower Garden</span>
+      </a>
+      <nav class="menu">
+        <a href="#market">Market</a>
+        <a href="./support.html">Destek</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Our Flower Garden Support</h1>
-  <p>If you have any questions, requests, or issues about the game, feel free to reach out using the form below.</p>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Bahçeni Kur, <span class="highlight">Birlikte</span> Büyütün!</h1>
+        <p>
+          Arkadaşınla rolleri bölüş, çiçekleri ek-sulayıp hasat et, siparişleri zamanında yetiştir.
+          Kazandıkça yeni çiçeklerin kilidini aç ve bahçeni efsanevi bir seraya dönüştür!
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#market">Market’i Keşfet</a>
+          <a class="btn ghost" href="./support.html">Destek Al</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=900&auto=format&fit=crop" alt="Renkli çiçekler görseli" />
+        <div class="flower-chip">🌷 Tulip</div>
+        <div class="flower-chip chip-2">🌼 Daisy</div>
+        <div class="flower-chip chip-3">🌺 Peony</div>
+      </div>
+    </div>
+    <div class="petals"></div>
+  </section>
 
-  <form action="https://formspree.io/f/myzwagvw" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <input type="submit" value="Send" />
-  </form>
+  <section class="features">
+    <div class="container grid-3">
+      <div class="feature-card">
+        <div class="icon">🌱</div>
+        <h3>Ekip Oyna</h3>
+        <p>Arkadaşınla iş bölümü yap: biri sular, diğeri hasat eder; siparişler yağ gibi aksın.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🛒</div>
+        <h3>Sipariş Akışı</h3>
+        <p>Gelen siparişleri zamanında tamamla, puanları topla, marketten yeni tohumlar aç.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌸</div>
+        <h3>Yeni Türler</h3>
+        <p>Kazandıkça nadir çiçeklerin kilidini aç, bahçeni benzersiz hale getir.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="info-box">
-    <p><strong>Support Process:</strong> All messages will be answered within <strong>3 business days</strong>.  
-    For urgent matters, please also contact us via email: <a href="mailto:ourgamesstudios@gmail.com">ourgamesstudios@gmail.com</a></p>
-    <p><strong>Your privacy matters to us.</strong> The information you provide will only be used for support purposes and will never be shared with third parties.</p>
-  </div>
+  <section id="market" class="market">
+    <div class="container">
+      <h2>Market</h2>
+      <p class="section-sub">Tohumlar, gübreler ve dekorlarla bahçeni büyüt.</p>
 
-  <footer>
-    © 2025 Our Flower Garden | All Rights Reserved
+      <div class="cards">
+        <!-- Kart 1 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?q=80&w=800&auto=format&fit=crop" alt="Lale Tohumu">
+          <div class="card-body">
+            <h3>Lale Tohumu</h3>
+            <p>Hızlı büyür, parlak renkleriyle bahçeye hareket katar.</p>
+            <div class="card-meta">
+              <span class="pill">Kolay Bakım</span>
+              <span class="pill">Hızlı Hasat</span>
+            </div>
+            <div class="card-cta">
+              <span class="price">₺150</span>
+              <button class="btn primary">Satın Al</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kart 2 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop" alt="Papatya Tohumu">
+          <div class="card-body">
+            <h3>Papatya Tohumu</h3>
+            <p>Dayanıklı ve bereketli. Sipariş hedefleri için ideal.</p>
+            <div class="card-meta">
+              <span class="pill">Dayanıklı</span>
+              <span class="pill">Bereketli</span>
+            </div>
+            <div class="card-cta">
+              <span class="price">₺120</span>
+              <button class="btn primary">Satın Al</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kart 3 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1509043759401-136742328bb3?q=80&w=800&auto=format&fit=crop" alt="Şakayık Tohumu">
+          <div class="card-body">
+            <h3>Şakayık Tohumu</h3>
+            <p>Nadir ve yüksek getirili. İleri seviyeye göz kırpar.</p>
+            <div class="card-meta">
+              <span class="pill">Nadir</span>
+              <span class="pill">Yüksek Getiri</span>
+            </div>
+            <div class="card-cta">
+              <span class="price">₺300</span>
+              <button class="btn primary">Satın Al</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="note">
+        Not: Oyun içi fiyatlar örnektir. Canlı fiyatlar uygulama içinden değişebilir.
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Our Flower Garden • Tüm Hakları Saklıdır</p>
+      <nav class="footer-menu">
+        <a href="./index.html">Ana Sayfa</a>
+        <a href="#market">Market</a>
+        <a href="./support.html">Destek</a>
+      </nav>
+    </div>
   </footer>
-
 </body>
 </html>
