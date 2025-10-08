@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Flower Garden - Destek</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <meta name="description" content="Our Flower Garden destek formu: Soruların, taleplerin veya sorunların için ekibimize ulaş. Gizliliğin güvencemiz altında.">
+</head>
+<body class="support-body">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html">
+        <img class="brand-logo" src="https://images.unsplash.com/photo-1520975867597-0f146f3e25a6?q=80&w=200&auto=format&fit=crop" alt="Our Flower Garden Logo"/>
+        <span>Our Flower Garden</span>
+      </a>
+      <nav class="menu">
+        <a href="./index.html#market">Market</a>
+        <a class="active" href="./support.html">Destek</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="support-wrapper">
+    <section class="support-hero">
+      <h1>Destek</h1>
+      <p>Oyunla ilgili soru, istek veya bir sorun mu var? Aşağıdaki formdan bize yaz.</p>
+    </section>
+
+    <section class="support-form-area">
+      <form class="support-form" action="https://formspree.io/f/myzwagvw" method="POST">
+        <label>
+          <span>Ad Soyad</span>
+          <input type="text" name="name" placeholder="Adınız" required />
+        </label>
+
+        <label>
+          <span>E-posta</span>
+          <input type="email" name="email" placeholder="ornek@mail.com" required />
+        </label>
+
+        <label>
+          <span>Mesajınız</span>
+          <textarea name="message" rows="5" placeholder="Mesajınızı yazın..." required></textarea>
+        </label>
+
+        <input class="btn primary full" type="submit" value="Gönder" />
+      </form>
+
+      <div class="info-box">
+        <p><strong>Yanıt Süreci:</strong> Tüm mesajlara <strong>3 iş günü</strong> içinde dönüş yapıyoruz.  
+        Acil durumlar için e-posta: <a href="mailto:ourgamesstudios@gmail.com">ourgamesstudios@gmail.com</a></p>
+        <p><strong>Gizlilik:</strong> Sağladığınız bilgiler yalnızca destek amacıyla kullanılacak, üçüncü taraflarla paylaşılmayacaktır.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Our Flower Garden • Tüm Hakları Saklıdır</p>
+      <nav class="footer-menu">
+        <a href="./index.html">Ana Sayfa</a>
+        <a href="./index.html#market">Market</a>
+        <a class="active" href="./support.html">Destek</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
