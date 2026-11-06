@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join my garden – Our Flower Garden</title>
+  <meta name="description" content="Your friend invited you to grow a garden together in Our Flower Garden. Free on iPhone and Android.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Come grow flowers with me! 🌸">
+  <meta property="og:description" content="Join my garden in Our Flower Garden – a cozy co-op farming game for two. Free on iPhone and Android.">
+  <meta property="og:image" content="https://ourgamesstudios.github.io/img/hero-art.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="apple-touch-icon" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#fff9ef; --leaf:#2e7d4f; --leaf-dark:#1f5c39; --leaf-soft:#e3f4e8;
+      --gold:#fbbf24; --brown:rgba(61,38,18,.94); --ink:#2c2620; --muted:#6e645a;
+      --display:"Chewy","Comic Sans MS",system-ui,sans-serif;
+      --body:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      min-height:100vh; min-height:100dvh;
+      font-family:var(--body); color:var(--ink); background:var(--cream);
+      display:flex; flex-direction:column; align-items:center;
+      -webkit-font-smoothing:antialiased;
+    }
+    .hero{
+      width:100%; height:200px; flex:none;
+      background:url("../img/hero-art.jpg") center 35%/cover no-repeat;
+      -webkit-mask-image:linear-gradient(#000 55%,transparent);
+              mask-image:linear-gradient(#000 55%,transparent);
+    }
+    main{
+      width:100%; max-width:440px; padding:0 16px 32px; margin-top:-64px;
+      display:flex; flex-direction:column; align-items:center; text-align:center;
+    }
+    .logo{width:84px;height:84px;border-radius:22px;box-shadow:0 10px 28px rgba(60,40,20,.22);border:3px solid #fff}
+    h1{font-family:var(--display);font-weight:400;font-size:2.2rem;line-height:1.1;margin:14px 0 6px;color:var(--leaf-dark)}
+    .sub{margin:0 0 20px;color:var(--muted);font-size:1.05rem;line-height:1.45}
+    .plate{
+      min-width:230px; max-width:100%; padding:10px 26px 12px; border-radius:18px;
+      background:var(--brown); border:3px solid var(--gold);
+      box-shadow:0 10px 26px rgba(61,38,18,.25);
+    }
+    .plate small{display:block;font-family:var(--display);font-size:1rem;color:var(--gold)}
+    .plate b{display:block;font-family:var(--display);font-weight:400;font-size:2.4rem;letter-spacing:6px;color:#fff;line-height:1.15;word-break:break-all}
+    .plate b.long{font-size:1.15rem;letter-spacing:0}
+    .cta{
+      margin-top:22px; width:100%; border:0; cursor:pointer;
+      padding:17px 20px; border-radius:18px;
+      background:var(--leaf); color:#fff; font:800 1.15rem var(--body);
+      box-shadow:0 6px 0 var(--leaf-dark),0 14px 28px rgba(46,125,79,.28);
+      transition:transform .08s ease, box-shadow .08s ease;
+    }
+    .cta:active{transform:translateY(4px);box-shadow:0 2px 0 var(--leaf-dark),0 8px 18px rgba(46,125,79,.25)}
+    .cta.done{background:#16a34a}
+    .hint{margin:16px 0 0;font-size:.95rem;color:var(--muted);line-height:1.45}
+    .stores{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+    .stores a{
+      display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:14px;
+      background:#1d1b19;color:#fff;text-decoration:none;font-weight:800;font-size:.95rem;
+    }
+    .stores svg{width:20px;height:20px;flex:none}
+    .foot{margin-top:28px;font-size:.8rem;color:var(--muted)}
+    .foot a{color:var(--leaf)}
+    [hidden]{display:none!important}
+  </style>
+</head>
+<body>
+  <div class="hero" aria-hidden="true"></div>
+  <main>
+    <img class="logo" src="../logo.png" alt="Our Flower Garden" width="84" height="84">
+    <h1 id="title">You're invited!</h1>
+    <p class="sub" id="sub">Your friend wants to grow a garden with you in Our Flower Garden.</p>
+
+    <div class="plate" id="plate" hidden>
+      <small id="codeLabel">Farm code</small>
+      <b id="code"></b>
+    </div>
+
+    <button class="cta" id="cta" type="button">Copy code &amp; get the game</button>
+    <p class="hint" id="hint">Install the game, tap Join and paste the code.</p>
+
+    <div class="stores">
+      <a id="ios" href="https://apps.apple.com/app/our-flower-garden/id6751162291">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.29-3.52zM14.2 6.13c.6-.74 1.01-1.75.9-2.77-.87.04-1.93.58-2.55 1.31-.56.64-1.05 1.68-.92 2.67.97.08 1.96-.49 2.57-1.21z"/></svg>
+        App Store
+      </a>
+      <a id="android" href="https://play.google.com/store/apps/details?id=com.bahakaradagli.ourflowergarden">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 2.3l10.2 10.2L3.6 22.7c-.36-.2-.6-.6-.6-1.05V3.35c0-.45.24-.85.6-1.05z"/><path fill="#fbbc04" d="M17.3 9l-3.5 3.5 3.5 3.5 3.95-2.25c.98-.56.98-1.94 0-2.5z"/><path fill="#4285f4" d="M3.6 2.3c.33-.2.76-.22 1.15 0L17.3 9l-3.5 3.5z"/><path fill="#ea4335" d="M13.8 12.5l3.5 3.5-12.55 6.7c-.39.22-.82.2-1.15 0z"/></svg>
+        Google Play
+      </a>
+    </div>
+
+    <p class="foot"><a href="../index.html">ourgamesstudios.github.io</a></p>
+  </main>
+
+  <script>
+  (function () {
+    // Davet linki: https://ourgamesstudios.github.io/join/?c=K3M9TP
+    // Oyundaki Paylaş düğmesi (OurFlower/src/components/InviteCode.tsx) bu linki gönderir.
+    // Tek dokunuş: kod panoya kopyalanır ve telefonun mağazası açılır. Android'de
+    // oyun yüklüyse intent:// ile doğrudan oyun açılır, değilse Play Store.
+    var IOS_URL = "https://apps.apple.com/app/our-flower-garden/id6751162291";
+    var PKG = "com.bahakaradagli.ourflowergarden";
+    var PLAY_URL = "https://play.google.com/store/apps/details?id=" + PKG +
+      "&referrer=" + encodeURIComponent("utm_source=invite&utm_medium=share");
+
+    // Kod: kısa davet kodu (K3M9TP) ya da eski sürümlerin uzun oda kimliği (-Oa...).
+    var raw = "";
+    try { raw = new URLSearchParams(location.search).get("c") || ""; } catch (e) {}
+    raw = raw.trim();
+    var code = /^[A-Za-z0-9_-]{4,40}$/.test(raw) ? (raw.charAt(0) === "-" ? raw : raw.toUpperCase()) : "";
+
+    var ua = navigator.userAgent || "";
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+
+    // Çeviriler — oyunun 13 dili. {join} oyundaki "Katıl" düğmesinin adı.
+    var T = {
+      en: ["You're invited!", "Your friend wants to grow a garden with you in Our Flower Garden.", "Farm code", "Copy code & get the game", "Code copied!", "Install the game, tap Join and paste the code.", "Get the game", "Ask your friend for their farm code, then tap Join in the game."],
+      tr: ["Davetlisin!", "Arkadaşın Our Flower Garden'da seninle birlikte bahçe büyütmek istiyor.", "Çiftlik kodu", "Kodu kopyala ve oyunu indir", "Kod kopyalandı!", "Oyunu kur, Katıl'a dokun ve kodu yapıştır.", "Oyunu indir", "Arkadaşından çiftlik kodunu iste, sonra oyunda Katıl'a dokun."],
+      de: ["Du bist eingeladen!", "Dein Freund möchte mit dir in Our Flower Garden einen Garten anlegen.", "Farm-Code", "Code kopieren & Spiel holen", "Code kopiert!", "Installiere das Spiel, tippe auf Beitreten und füge den Code ein.", "Spiel holen", "Frag deinen Freund nach seinem Farm-Code und tippe im Spiel auf Beitreten."],
+      fr: ["Tu es invité !", "Ton ami veut faire pousser un jardin avec toi dans Our Flower Garden.", "Code de la ferme", "Copier le code et télécharger", "Code copié !", "Installe le jeu, touche Rejoindre et colle le code.", "Télécharger le jeu", "Demande le code de sa ferme à ton ami, puis touche Rejoindre dans le jeu."],
+      es: ["¡Estás invitado!", "Tu amigo quiere cultivar un jardín contigo en Our Flower Garden.", "Código de la granja", "Copiar código y descargar", "¡Código copiado!", "Instala el juego, toca Unirse y pega el código.", "Descargar el juego", "Pide a tu amigo el código de su granja y toca Unirse en el juego."],
+      it: ["Sei invitato!", "Il tuo amico vuole coltivare un giardino con te in Our Flower Garden.", "Codice della fattoria", "Copia il codice e scarica", "Codice copiato!", "Installa il gioco, tocca Entra e incolla il codice.", "Scarica il gioco", "Chiedi al tuo amico il codice della sua fattoria, poi tocca Entra nel gioco."],
+      pt: ["Você foi convidado!", "Seu amigo quer cultivar um jardim com você no Our Flower Garden.", "Código da fazenda", "Copiar código e baixar", "Código copiado!", "Instale o jogo, toque em Entrar e cole o código.", "Baixar o jogo", "Peça ao seu amigo o código da fazenda e toque em Entrar no jogo."],
+      ru: ["Тебя пригласили!", "Твой друг хочет вырастить сад вместе с тобой в Our Flower Garden.", "Код фермы", "Скопировать код и скачать", "Код скопирован!", "Установи игру, нажми Войти и вставь код.", "Скачать игру", "Попроси у друга код фермы и нажми Войти в игре."],
+      ja: ["招待が届きました！", "友だちが Our Flower Garden で一緒に庭を育てたがっています。", "農場コード", "コードをコピーしてダウンロード", "コピーしました！", "ゲームをインストールして 参加 をタップし、コードを貼り付けてね。", "ゲームを入手", "友だちに農場コードを聞いて、ゲームで 参加 をタップしてね。"],
+      ko: ["초대받았어요!", "친구가 Our Flower Garden에서 함께 정원을 가꾸고 싶어 해요.", "농장 코드", "코드 복사하고 게임 받기", "코드를 복사했어요!", "게임을 설치하고 참여를 누른 뒤 코드를 붙여 넣어 줘.", "게임 받기", "친구에게 농장 코드를 물어본 뒤 게임에서 참여를 눌러 줘."],
+      zh: ["你收到了邀请！", "你的朋友想和你一起在 Our Flower Garden 里打造花园。", "农场代码", "复制代码并下载游戏", "代码已复制！", "安装游戏，点击 加入，然后粘贴代码。", "下载游戏", "向朋友要农场代码，然后在游戏中点击 加入。"],
+      ar: ["أنت مدعو!", "صديقك يريد أن يزرع حديقة معك في Our Flower Garden.", "رمز المزرعة", "انسخ الرمز ونزّل اللعبة", "تم نسخ الرمز!", "ثبّت اللعبة، اضغط انضمام والصق الرمز.", "نزّل اللعبة", "اطلب رمز المزرعة من صديقك، ثم اضغط انضمام في اللعبة."],
+      id: ["Kamu diundang!", "Temanmu ingin menanam kebun bersamamu di Our Flower Garden.", "Kode kebun", "Salin kode & unduh game", "Kode disalin!", "Pasang gamenya, ketuk Gabung, lalu tempel kodenya.", "Unduh game", "Minta kode kebun dari temanmu, lalu ketuk Gabung di game."]
+    };
+    var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+    var lang = "en";
+    for (var i = 0; i < langs.length; i++) {
+      var l = String(langs[i] || "").toLowerCase().split("-")[0];
+      if (T[l]) { lang = l; break; }
+    }
+    var s = T[lang];
+    document.documentElement.lang = lang;
+    if (lang === "ar") document.documentElement.dir = "rtl";
+
+    var $ = function (id) { return document.getElementById(id); };
+    $("title").textContent = s[0];
+    $("sub").textContent = s[1];
+    $("codeLabel").textContent = s[2];
+
+    $("ios").href = IOS_URL;
+    $("android").href = PLAY_URL;
+
+    var cta = $("cta");
+    if (code) {
+      $("plate").hidden = false;
+      $("code").textContent = code;
+      if (code.length > 10) $("code").className = "long";
+      cta.textContent = s[3];
+      $("hint").textContent = s[5];
+    } else {
+      cta.textContent = s[6];
+      $("hint").textContent = s[7];
+    }
+    // Telefon belliyse yalnız doğru mağazanın düğmesi kalsın (ana düğme zaten oraya gidiyor).
+    if (isIOS) $("android").hidden = true;
+    if (isAndroid) $("ios").hidden = true;
+
+    function copy(text) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return legacyCopy(text); });
+        }
+      } catch (e) {}
+      return Promise.resolve(legacyCopy(text));
+    }
+    function legacyCopy(text) {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, text.length);
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      } catch (e) { return false; }
+    }
+
+    function storeUrl() {
+      if (isIOS) return IOS_URL;
+      if (isAndroid) {
+        // Oyun yüklüyse açar, değilse Chrome Play Store'a düşer.
+        return "intent://join?c=" + encodeURIComponent(code) +
+          "#Intent;scheme=ourflowergarden;package=" + PKG +
+          ";S.browser_fallback_url=" + encodeURIComponent(PLAY_URL) + ";end";
+      }
+      return null;
+    }
+
+    cta.addEventListener("click", function () {
+      var go = function () {
+        var url = storeUrl();
+        if (url) {
+          location.href = url;
+        } else {
+          // Bilgisayardan açıldı: mağaza düğmelerine kaydır.
+          $("ios").scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      };
+      if (!code) { go(); return; }
+      copy(code).then(function (ok) {
+        if (ok) { cta.textContent = s[4]; cta.className = "cta done"; }
+        setTimeout(go, ok ? 450 : 0);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
